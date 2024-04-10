@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    perspective: 8000px;
+    backface-visibility: visible;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    transform-style: preserve-3d;
+    background-color: #635f5f;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container-box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: max-content;
+    height: max-content;
+    transform: translate(-50%, -50%) scale(1.6);
+}
+
+.vitrine {
+    width: 400px;
+    height: 200px;
+    position: relative;
+}
+
+.vitrine * {
+    position: absolute;
+}
+
+.vitrine > :nth-child(1) {
+    background-color: #9b9797;
+    width: 400px;
+    height: 200px;
+    transform: translateZ(-200px);
+    top: 0;
+    left: 0;
+}
+
+.vitrine > :nth-child(2) {
+    background-color: #b6b3b3;
+    width: 400px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    transform: rotateY(90deg) translateZ(-200px);
+
+}
+
+.vitrine > :nth-child(3) {
+    background-color: #afabab;
+
+    width: 400px;
+    height: 200px;
+    top: 0;
+    right: 0;
+    transform: rotateY(-90deg) translateZ(-200px);
+}
+
+.vitrine > :nth-child(4) {
+    background-color: #d6d6d6;
+    width: 400px;
+    height: 400px;
+    transform: rotateX(90deg) translateZ(0);
+}
+
+.vitrine > :nth-child(5) {
+    background-color: #e4e4e4;
+    width: 400px;
+    height: 400px;
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.vidro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 200px;
+    background-color: transparent;
+    border: 8px solid #474040;
+    transform: translateZ(200px)
+}
+
+.vidro > :nth-child(1) {
+    position: absolute;
+    top: -1%;
+    left: 34%;
+    width: 8px;
+    height: 102%;
+    background-color: #474040;
+}
+
+.vidro > :nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 8em;
+    height: 8px;
+    background-color: #474040;
+
+}
+
+.vidro > :nth-child(2) {
+    position: absolute;
+    top: -1%;
+    right: 34%;
+    width: 8px;
+    height: 102%;
+    background-color: #474040;
+    pointer-events: none;
+}
+
+/* PRATELEIRA */
+.prateleira {
+    position: relative;
+    top: 40%;
+    left: 100%;
+    transform: translateX(-69%) rotateX(90deg);
+}
+
+.prateleira .andar {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.prateleira > :nth-child(1) {
+    transform: translateZ(30px);
+    background-color: #333;
+}
+.prateleira > :nth-child(2) {
+    transform: translateZ(20px);
+    background-color: #414141;
+}
+.prateleira > :nth-child(3) {
+    transform: translateZ(10px);
+    background-color: #4e4e4e;
+}
+.prateleira > :nth-child(4) {
+    transform: translateZ(0);
+    background-color: #2e2e2e;
+}
+
+/* MESA */
+
+.mesa {
+    position: relative;
+    left: 100px;
+}
+
+.tampa-mesa {
+    width: 200px;
+    height: 100px;
+    transform: translateZ(40px);
+}
+
+.tampa-mesa .cima {
+    background-color: rgb(196, 196, 196);
+    width: 100%;
+    height: 100%;
+    transform: translateZ(2px);
+}
+
+.tampa-mesa .baixo {
+    background-color: rgb(99, 98, 98);
+    width: 100%;
+    height: 100%;
+    transform: translateZ(-2px);
+}
+
+.tampa-mesa .frente {
+    background-color: rgb(116, 114, 114);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    transform: rotateX(90deg) translateZ(-98px);
+}
+
+.tampa-mesa .esquerda {
+    background-color: rgb(87, 87, 87);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 4px;
+    transform: rotateX(90deg) rotateY(90deg) translateZ(-50px) translateX(50px);
+}
+
+.tampa-mesa .direita {
+    background-color: rgb(87, 87, 87);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 4px;
+    transform: rotateX(90deg) rotateY(90deg) translateZ(150px) translateX(50px);
+}
+
+/* pés mesa */
+
+.pe-esquerdo {
+    width: 40px;
+    height: 80px;
+}
+
+.pe-esquerdo .esquerda {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(88, 85, 85);
+    transform: rotateY(90deg) translateX(-20px) translateZ(-2px);
+}
+
+.pe-esquerdo .direita {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(77, 77, 77);
+    transform: rotateY(90deg) translateX(-20px) translateZ(2px);
+}
+
+.pe-esquerdo .frente {
+    width: 4px;
+    height: 40px;
+    background-color: rgb(119, 117, 113);
+    transform: rotateX(90deg) translateX(18px) translateY(20px) translateZ(-60px);
+}
+
+
+.pe-direito {
+    width: 40px;
+    height: 80px;
+    transform: translateX(160px);
+}
+
+.pe-direito .esquerda {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(88, 85, 85);
+    transform: rotateY(90deg) translateX(-20px) translateZ(-2px);
+}
+
+.pe-direito .direita {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(77, 77, 77);
+    transform: rotateY(90deg) translateX(-20px) translateZ(2px);
+}
+
+.pe-direito .frente {
+    width: 4px;
+    height: 40px;
+    background-color: rgb(119, 117, 113);
+    transform: rotateX(90deg) translateX(18px) translateY(20px) translateZ(-60px);
+}
